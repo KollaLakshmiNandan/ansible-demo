@@ -1,0 +1,13 @@
+---
+- name: Template Demo
+  hosts: webservers
+
+  vars:
+    username: Nandy
+
+  tasks:
+
+    - name: Deploy template
+      template:
+        src: ../templates/index.j2
+        dest: /tmp/index.html

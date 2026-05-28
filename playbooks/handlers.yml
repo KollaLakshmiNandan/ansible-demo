@@ -1,0 +1,17 @@
+---
+- name: Handler Demo
+  hosts: webservers
+
+  tasks:
+
+    - name: Update file
+      copy:
+        content: "Hello Nandy"
+        dest: /tmp/demo.txt
+
+      notify: Restart Service
+
+  handlers:
+
+    - name: Restart Service
+      command: echo "Service Restarted"

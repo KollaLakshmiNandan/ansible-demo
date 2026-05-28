@@ -1,0 +1,25 @@
+---
+- name: Variables Demo
+  hosts: webservers
+
+  vars:
+    username: Nandy
+
+  tasks:
+
+    - name: Create file
+      copy:
+        content: "Hello {{ username }}"
+        dest: /tmp/vars.txt---
+- name: Variables Demo
+  hosts: webservers
+
+  vars:
+    username: Nan
+    course: Ansible
+
+  tasks:
+
+    - name: Print variables
+      debug:
+        msg: "User is {{ username }} and course is {{ course }}"

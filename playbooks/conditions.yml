@@ -1,0 +1,12 @@
+---
+- name: Condition Demo
+  hosts: webservers
+
+  tasks:
+
+    - name: Run only on server1
+      file:
+        path: /tmp/server1.txt
+        state: touch
+
+      when: inventory_hostname == "server1"
