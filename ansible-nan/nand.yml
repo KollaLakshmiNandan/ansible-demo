@@ -1,0 +1,11 @@
+---
+- name: Vault Demo
+  hosts: myservers
+
+  vars_files:
+    - secrets.yml
+
+  tasks:
+    - name: Display username
+      debug:
+        msg: "User is {{ db_user }}"

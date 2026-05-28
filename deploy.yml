@@ -1,0 +1,6 @@
+---
+- name: Deploy using roles
+  hosts: webservers
+
+  roles:
+    - webserver

@@ -1,0 +1,12 @@
+---
+- name: Create HTML file using role
+  copy:
+    content: |
+      <html>
+      <body>
+      <h1>Hello from {{ inventory_hostname }}</h1>
+      <p>Deployed using Ansible Role</p>
+      </body>
+      </html>
+
+    dest: "/tmp/{{ inventory_hostname }}.html"
